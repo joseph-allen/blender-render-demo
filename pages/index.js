@@ -58,6 +58,9 @@ export default function Home() {
           Render Blender file inside 3.js
         </h1>
 
+            {/* https://github.com/pmndrs/react-three-fiber/blob/26cf7eed4f9bddd79305a1f61b20554b07fdff1b/docs/tutorials/loading-models.mdx
+            GLTF, FBX and OBJ. All of these will use the useLoader function but in slightly different ways. */}
+      
       </main>
     </div>
   )
