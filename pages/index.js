@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import React, { useState } from 'react';
 import styles from '../styles/Home.module.css'
 import { Canvas } from "@react-three/fiber";
 import Box from "../components/Box";
@@ -8,6 +9,8 @@ import OrbitControls from "../components/OrbitControls";
 import Draggable from "../components/Draggable";
 
 export default function Home() {
+  const [active, setActive] = useState(false)
+
   return (
     <div className={styles.container}>
       <Head>
@@ -41,6 +44,15 @@ export default function Home() {
         <h1 className={styles.title}>
           Render Clickable button inside 3js
         </h1>
+
+        <p>This part is a React component, the below sketch is {active ? 'inactive' : 'active'}</p>
+
+        <Canvas>
+        <mesh scale={active ? 1 : 1.5} onClick={() => setActive(!active)} >
+          <boxGeometry color={active ? 'red' : 'green'}/>
+          <meshBasicMaterial color={active ? 'red' : 'green'} />
+        </mesh>
+        </Canvas>
 
         <h1 className={styles.title}>
           Render Blender file inside 3.js
