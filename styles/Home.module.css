@@ -127,3 +127,13 @@
     filter: invert(1);
   }
 }
+
+/* Sketch */
+.scene{
+  width:50vw;
+  height:50vh;
+}
+
+.canvas{
+  background: #000;
+}
