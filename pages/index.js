@@ -18,7 +18,7 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Blender Render Demo in 3.js
+          Render 3.js scene in Next App
         </h1>
         <div className={styles.scene}>
           <Canvas
@@ -37,6 +37,15 @@ export default function Home() {
             <Floor position={[0, -1, 0]} />
           </Canvas>
         </div>
+
+        <h1 className={styles.title}>
+          Render Clickable button inside 3js
+        </h1>
+
+        <h1 className={styles.title}>
+          Render Blender file inside 3.js
+        </h1>
+
       </main>
     </div>
   )
