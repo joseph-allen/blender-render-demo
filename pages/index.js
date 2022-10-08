@@ -7,7 +7,8 @@ import LightBulb from "../components/LightBulb";
 import Floor from "../components/Floor";
 import OrbitControls from "../components/OrbitControls";
 import Draggable from "../components/Draggable";
-
+import Model from "../components/Model";
+import Light from "../components/Light";
 export default function Home() {
   const [active, setActive] = useState(false)
 
@@ -48,19 +49,21 @@ export default function Home() {
         <p>This part is a React component, the below sketch is {active ? 'inactive' : 'active'}</p>
 
         <Canvas>
-        <mesh scale={active ? 1 : 1.5} onClick={() => setActive(!active)} >
-          <boxGeometry color={active ? 'red' : 'green'}/>
-          <meshBasicMaterial color={active ? 'red' : 'green'} />
-        </mesh>
+          <mesh scale={active ? 1 : 1.5} onClick={() => setActive(!active)} >
+            <boxGeometry color={active ? 'red' : 'green'}/>
+            <meshBasicMaterial color={active ? 'red' : 'green'} />
+          </mesh>
         </Canvas>
 
         <h1 className={styles.title}>
           Render Blender file inside 3.js
         </h1>
 
-            {/* https://github.com/pmndrs/react-three-fiber/blob/26cf7eed4f9bddd79305a1f61b20554b07fdff1b/docs/tutorials/loading-models.mdx
-            GLTF, FBX and OBJ. All of these will use the useLoader function but in slightly different ways. */}
-      
+        {/* GLTF, FBX and OBJ. All of these will use the useLoader function but in slightly different ways. */}
+        <Canvas camera={{ position: [0, 0, 150] }}>
+          <ambientLight color={active ? 'red' : 'yellow'}  intensity={0.7}/>
+          <Model/>
+        </Canvas>
       </main>
     </div>
   )
